@@ -50,6 +50,17 @@ export function Vehicles() {
 function VehicleCard({ vehicle, onChanged }: { vehicle: Vehicle; onChanged: () => void }) {
   const { data, refresh } = useVehicleData(vehicle.id);
 
+  const rename = async () => {
+    const newName = prompt("Nieuwe naam:", vehicle.name);
+    if (newName == null || !newName.trim() || newName.trim() === vehicle.name) return;
+    const { error } = await supabase
+      .from("vehicles")
+      .update({ name: newName.trim() })
+      .eq("id", vehicle.id);
+    if (error) alert("Hernoemen mislukt: " + error.message);
+    else onChanged();
+  };
+
   const sell = async () => {
     const priceStr = prompt(`Verkoopprijs van "${vehicle.name}" (€):`);
     if (priceStr == null) return;
@@ -87,11 +98,16 @@ function VehicleCard({ vehicle, onChanged }: { vehicle: Vehicle; onChanged: () =
             {vehicle.purchase_price != null && ` voor ${eur(vehicle.purchase_price)}`}
           </p>
         </div>
-        {vehicle.active && (
-          <button onClick={sell} className="text-sm text-amber-700 bg-amber-50 border border-amber-200 px-3 py-1.5 rounded hover:bg-amber-100">
-            Verkocht…
+        <div className="flex gap-2">
+          <button onClick={rename} className="text-sm text-sky-700 bg-sky-50 border border-sky-200 px-3 py-1.5 rounded hover:bg-sky-100">
+            Hernoem…
           </button>
-        )}
+          {vehicle.active && (
+            <button onClick={sell} className="text-sm text-amber-700 bg-amber-50 border border-amber-200 px-3 py-1.5 rounded hover:bg-amber-100">
+              Verkocht…
+            </button>
+          )}
+        </div>
       </div>
 
       <RecurringList vehicleId={vehicle.id} recurring={data.recurringCosts} onChanged={refresh} />
