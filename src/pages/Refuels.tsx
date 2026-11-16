@@ -15,6 +15,7 @@ import { useVehicleData, useVehicles } from "../lib/data";
 import { computeStats } from "../lib/stats";
 import { eur, dateStr, todayISO } from "../lib/format";
 import { Fillup, Charge, TireSeason } from "../types";
+import { PhotoScan } from "../components/PhotoScan";
 
 export function Refuels() {
   const { vehicles, refresh: refreshVehicles } = useVehicles();
@@ -331,6 +332,27 @@ function EntryForm({
 
   return (
     <form onSubmit={submit} className="bg-white rounded-lg shadow-sm p-4 space-y-3">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+        <span className="text-xs text-slate-400">Foto invoeren (OCR op je toestel, foto wordt niet bewaard):</span>
+        <PhotoScan
+          mode="odo"
+          isEv={isEv}
+          onResult={(r) => {
+            if ("odo" in r && r.odo) setOdo(r.odo);
+          }}
+        />
+        <PhotoScan
+          mode="receipt"
+          isEv={isEv}
+          onResult={(r) => {
+            if ("amount" in r) {
+              if (r.amount) setAmount(r.amount);
+              if (r.total) setTotalCost(r.total);
+              if (r.unitPrice) setUnitPrice(r.unitPrice);
+            }
+          }}
+        />
+      </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
         <Field label="Datum">
           <input type="date" required value={date} onChange={(e) => setDate(e.target.value)} className={inputCls} />

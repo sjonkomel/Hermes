@@ -4,6 +4,16 @@ Alle opvallende wijzigingen aan dit project worden in dit bestand gedocumenteerd
 Indeling volgt [Keep a Changelog](https://keepachangelog.com/), versie volgt
 [SemVer](https://semver.org/).
 
+## [1.0.0] — 2026-11-16
+
+### Added
+
+- Foto-invoer bij Tanken & laden: maak een foto van de kilometerstand of de
+  pompbon, OCR loopt op het toestel zelf (tesseract.js, pas geladen bij gebruik).
+  Herkende km-stand, liters/kWh, totaalbedrag en prijs per eenheid worden
+  overgenomen in het formulier. De foto blijft in het geheugen en wordt na de
+  scan weggegooid: niets opgeslagen, niets geüpload.
+
 ## [0.2.2] — 2026-11-16
 
 ### Added
