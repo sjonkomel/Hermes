@@ -4,6 +4,19 @@ Alle opvallende wijzigingen aan dit project worden in dit bestand gedocumenteerd
 Indeling volgt [Keep a Changelog](https://keepachangelog.com/), versie volgt
 [SemVer](https://semver.org/).
 
+## [1.0.2] — 2026-11-16
+
+### Changed
+
+- Dubbele OCR-pass per foto (Otsu-gebinariseerd + grijscontrast); beide
+  resultaten worden geparseerd en samengevoegd: de pass met de beste
+  kruiscontrole (liters x prijs = bedrag) wint, ontbrekende velden worden
+  aangevuld uit de andere pass.
+- 2-decimalen-bedragen op een "Prijs"-regel worden niet meer als totaal
+  genomen; een prijs-regel zonder 3 decimalen geldt nu ook als prijs.
+- Bij een onvolledig resultaat toont de scan de ruwe OCR-tekst, zodat
+  mislezingen zichtbaar en rapporteerbaar zijn.
+
 ## [1.0.1] — 2026-11-16
 
 ### Changed
