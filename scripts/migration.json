@@ -1,0 +1,2163 @@
+{
+  "vehicle": {
+    "name": "Auto (Sheet-import)",
+    "type": "auto",
+    "energy": "benzine",
+    "purchase_date": "2020-02-18",
+    "purchase_price": 19000,
+    "start_odo": 78170
+  },
+  "fillups": [
+    {
+      "date": "2020-03-05",
+      "odo": 78779,
+      "liters": 22.43,
+      "price_per_liter": 1.579,
+      "total_cost": 35.42,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2020-03-06",
+      "odo": 79096,
+      "liters": 23.82,
+      "price_per_liter": 1.479,
+      "total_cost": 35.23,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Vakantie Oostenrijk",
+      "note": null
+    },
+    {
+      "date": "2020-03-07",
+      "odo": 79555,
+      "liters": 35.09,
+      "price_per_liter": 1.409,
+      "total_cost": 49.44,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Vakantie",
+      "note": null
+    },
+    {
+      "date": "2020-03-13",
+      "odo": 79773,
+      "liters": 14.68,
+      "price_per_liter": 1.574,
+      "total_cost": 23.1,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Wintersport",
+      "note": null
+    },
+    {
+      "date": "2020-03-13",
+      "odo": 80010,
+      "liters": 18.74,
+      "price_per_liter": 1.459,
+      "total_cost": 27.34,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Wintersport",
+      "note": null
+    },
+    {
+      "date": "2020-03-13",
+      "odo": 80276,
+      "liters": 23.68,
+      "price_per_liter": 1.279,
+      "total_cost": 30.29,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Wintersport",
+      "note": null
+    },
+    {
+      "date": "2020-05-18",
+      "odo": 81352,
+      "liters": 34.31,
+      "price_per_liter": 1.489,
+      "total_cost": 51.09,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2020-08-13",
+      "odo": 83166,
+      "liters": 34.99,
+      "price_per_liter": 1.549,
+      "total_cost": 54.2,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2020-10-22",
+      "odo": 84744,
+      "liters": 40.61,
+      "price_per_liter": 1.539,
+      "total_cost": 62.5,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2020-12-23",
+      "odo": 86626,
+      "liters": 40.99,
+      "price_per_liter": 1.549,
+      "total_cost": 63.49,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2021-02-09",
+      "odo": 88267,
+      "liters": 37.25,
+      "price_per_liter": 1.659,
+      "total_cost": 61.8,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2021-06-13",
+      "odo": 90491,
+      "liters": 38.33,
+      "price_per_liter": 1.789,
+      "total_cost": 68.57,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2021-08-29",
+      "odo": 92356,
+      "liters": 42.12,
+      "price_per_liter": 1.809,
+      "total_cost": 76.2,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Circa 40 kilometer gereden na geen weergave",
+      "note": null
+    },
+    {
+      "date": "2021-12-11",
+      "odo": 93382,
+      "liters": 17.17,
+      "price_per_liter": 1.989,
+      "total_cost": 34.15,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2021-12-18",
+      "odo": 93929,
+      "liters": 37.96,
+      "price_per_liter": 1.734,
+      "total_cost": 65.82,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport",
+      "note": null
+    },
+    {
+      "date": "2021-12-24",
+      "odo": 94465,
+      "liters": 37.37,
+      "price_per_liter": 1.414,
+      "total_cost": 52.84,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport",
+      "note": null
+    },
+    {
+      "date": "2022-01-24",
+      "odo": 95236,
+      "liters": 15,
+      "price_per_liter": 1.929,
+      "total_cost": 28.94,
+      "full_tank": false,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2022-02-24",
+      "odo": 95561,
+      "liters": 37.88,
+      "price_per_liter": 2.039,
+      "total_cost": 77.24,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2022-03-31",
+      "odo": 96365,
+      "liters": 26.79,
+      "price_per_liter": 2.319,
+      "total_cost": 62.13,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2022-04-01",
+      "odo": 96697,
+      "liters": 31.51,
+      "price_per_liter": 2.389,
+      "total_cost": 75.28,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Weekend Oostenrijk",
+      "note": null
+    },
+    {
+      "date": "2022-04-01",
+      "odo": 97006,
+      "liters": 27.5,
+      "price_per_liter": 2.109,
+      "total_cost": 58,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Oostenrijk wintersport",
+      "note": null
+    },
+    {
+      "date": "2022-04-04",
+      "odo": 97339,
+      "liters": 28.52,
+      "price_per_liter": 1.899,
+      "total_cost": 54.16,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Wintersport terugweg",
+      "note": null
+    },
+    {
+      "date": "2022-04-04",
+      "odo": 97662,
+      "liters": 24.78,
+      "price_per_liter": 1.999,
+      "total_cost": 49.54,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Wintersport terugreis",
+      "note": null
+    },
+    {
+      "date": "2022-04-04",
+      "odo": 98057,
+      "liters": 35.03,
+      "price_per_liter": 2.249,
+      "total_cost": 78.78,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Wintersport terugweg",
+      "note": null
+    },
+    {
+      "date": "2022-04-21",
+      "odo": 98388,
+      "liters": 15.81,
+      "price_per_liter": 2.069,
+      "total_cost": 32.71,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2022-04-23",
+      "odo": 98753,
+      "liters": 32.31,
+      "price_per_liter": 1.685,
+      "total_cost": 54.44,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport frankrijk met dakkoffer",
+      "note": null
+    },
+    {
+      "date": "2022-04-23",
+      "odo": 99051,
+      "liters": 26.82,
+      "price_per_liter": 1.839,
+      "total_cost": 49.32,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport frankrijk met dakkoffer",
+      "note": null
+    },
+    {
+      "date": "2022-04-23",
+      "odo": 99442,
+      "liters": 35.35,
+      "price_per_liter": 1.815,
+      "total_cost": 64.16,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport frankrijk met dakkoffer",
+      "note": null
+    },
+    {
+      "date": "2022-05-07",
+      "odo": 99964,
+      "liters": 37.73,
+      "price_per_liter": 1.822,
+      "total_cost": 68.74,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport frankrijk met dakkoffer",
+      "note": null
+    },
+    {
+      "date": "2022-05-07",
+      "odo": 100317,
+      "liters": 31.99,
+      "price_per_liter": 1.79,
+      "total_cost": 57.26,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport frankrijk met dakkoffer",
+      "note": null
+    },
+    {
+      "date": "2022-06-01",
+      "odo": 101254,
+      "liters": 20.03,
+      "price_per_liter": 2.259,
+      "total_cost": 45.25,
+      "full_tank": false,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Grootste deel met dakkoffer, daarna in NL zonder",
+      "note": null
+    },
+    {
+      "date": "2022-07-17",
+      "odo": 102290,
+      "liters": 40.44,
+      "price_per_liter": 2.169,
+      "total_cost": 87.71,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2022-07-20",
+      "odo": 102594,
+      "liters": 16.36,
+      "price_per_liter": 2.149,
+      "total_cost": 35.16,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Auto uitgeleend",
+      "note": null
+    },
+    {
+      "date": "2022-09-21",
+      "odo": 105952,
+      "liters": 35.12,
+      "price_per_liter": 1.909,
+      "total_cost": 67.04,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2022-11-09",
+      "odo": 107391,
+      "liters": 37.18,
+      "price_per_liter": 1.989,
+      "total_cost": 73.95,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2022-12-28",
+      "odo": 108590,
+      "liters": 38.96,
+      "price_per_liter": 1.729,
+      "total_cost": 67.36,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2023-01-22",
+      "odo": 109461,
+      "liters": 41.53,
+      "price_per_liter": 1.819,
+      "total_cost": 75.54,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2023-04-22",
+      "odo": 110684,
+      "liters": 25.48,
+      "price_per_liter": 1.819073783,
+      "total_cost": 46.35,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2023-04-29",
+      "odo": 111219,
+      "liters": 38.52,
+      "price_per_liter": 1.964,
+      "total_cost": 75.65,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport eerste stop voorbij Luxemburg",
+      "note": null
+    },
+    {
+      "date": "2023-04-29",
+      "odo": 111471,
+      "liters": 21.58,
+      "price_per_liter": 1.99,
+      "total_cost": 42.94,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport stop 2",
+      "note": null
+    },
+    {
+      "date": "2023-04-29",
+      "odo": 111874,
+      "liters": 36.98,
+      "price_per_liter": 1.859,
+      "total_cost": 68.75,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport laatste stop voorbij moutiers",
+      "note": null
+    },
+    {
+      "date": "2023-05-06",
+      "odo": 112283,
+      "liters": 33.71,
+      "price_per_liter": 1.92,
+      "total_cost": 64.72,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport terugweg",
+      "note": null
+    },
+    {
+      "date": "2023-05-06",
+      "odo": 112674,
+      "liters": 35.46,
+      "price_per_liter": 1.734,
+      "total_cost": 61.49,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport Luxemburg e98",
+      "note": null
+    },
+    {
+      "date": "2023-05-18",
+      "odo": 113200,
+      "liters": 36.57,
+      "price_per_liter": 1.759,
+      "total_cost": 64.33,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Na winterstop, vanaf Luxemburg naar huis en aantal ritten zonder DK",
+      "note": null
+    },
+    {
+      "date": "2023-06-30",
+      "odo": 114374,
+      "liters": 34.17,
+      "price_per_liter": 1.809,
+      "total_cost": 61.81,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Vlak voor accijnsverhoging",
+      "note": null
+    },
+    {
+      "date": "2023-07-23",
+      "odo": 114960,
+      "liters": 32.04,
+      "price_per_liter": 1.743,
+      "total_cost": 55.86,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Vakantie Zweden",
+      "note": null
+    },
+    {
+      "date": "2023-07-23",
+      "odo": 115288,
+      "liters": 26.88,
+      "price_per_liter": 2.119,
+      "total_cost": 56.96,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Vakantie Zweden",
+      "note": null
+    },
+    {
+      "date": "2023-07-23",
+      "odo": 115560,
+      "liters": 24.47,
+      "price_per_liter": 1.754,
+      "total_cost": 42.93,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Vakantie Zweden",
+      "note": null
+    },
+    {
+      "date": "2023-07-24",
+      "odo": 115941,
+      "liters": 32.84,
+      "price_per_liter": 1.759,
+      "total_cost": 57.76,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Vakantie Zweden",
+      "note": null
+    },
+    {
+      "date": "2023-08-02",
+      "odo": 116437,
+      "liters": 35.46,
+      "price_per_liter": 1.826,
+      "total_cost": 64.74,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Vakantie Zweden",
+      "note": null
+    },
+    {
+      "date": "2023-08-06",
+      "odo": 116873,
+      "liters": 35.33,
+      "price_per_liter": 1.773,
+      "total_cost": 62.63,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Vakantie Zweden",
+      "note": null
+    },
+    {
+      "date": "2023-08-06",
+      "odo": 117191,
+      "liters": 27.63,
+      "price_per_liter": 1.959,
+      "total_cost": 54.12,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Vakantie Zweden",
+      "note": null
+    },
+    {
+      "date": "2023-08-07",
+      "odo": 117372,
+      "liters": 16.35,
+      "price_per_liter": 1.899,
+      "total_cost": 31.05,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Vakantie Zweden",
+      "note": null
+    },
+    {
+      "date": "2023-08-07",
+      "odo": 117679,
+      "liters": 11.79,
+      "price_per_liter": 2.334,
+      "total_cost": 27.52,
+      "full_tank": false,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Vakantie Zweden",
+      "note": null
+    },
+    {
+      "date": "2023-08-07",
+      "odo": 117900,
+      "liters": 34.18,
+      "price_per_liter": 2.019,
+      "total_cost": 69.01,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Vakantie Zweden",
+      "note": null
+    },
+    {
+      "date": "2023-10-21",
+      "odo": 119131,
+      "liters": 39.06,
+      "price_per_liter": 1.969,
+      "total_cost": 76.91,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2024-01-01",
+      "odo": 120373,
+      "liters": 36.8,
+      "price_per_liter": 1.889,
+      "total_cost": 69.52,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2024-03-11",
+      "odo": 121687,
+      "liters": 36.97,
+      "price_per_liter": 1.949,
+      "total_cost": 72.05,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2024-03-12",
+      "odo": 122082,
+      "liters": 36.96,
+      "price_per_liter": 2.223,
+      "total_cost": 82.15,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Wintersport Oostenrijk",
+      "note": null
+    },
+    {
+      "date": "2024-03-12",
+      "odo": 122476,
+      "liters": 38.48,
+      "price_per_liter": 2.209,
+      "total_cost": 85,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Oostenrijk heenweg deel 2 (Menko)",
+      "note": null
+    },
+    {
+      "date": "2024-03-16",
+      "odo": 122758,
+      "liters": 21.96,
+      "price_per_liter": 1.659,
+      "total_cost": 36.43,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Wintersport terugweg",
+      "note": null
+    },
+    {
+      "date": "2024-03-16",
+      "odo": 123187,
+      "liters": 35,
+      "price_per_liter": 1.982,
+      "total_cost": 69.36,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Terugweg Oostenrijk",
+      "note": null
+    },
+    {
+      "date": "2024-04-21",
+      "odo": 124432,
+      "liters": 21.22,
+      "price_per_liter": 1.999,
+      "total_cost": 42.42,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2024-04-27",
+      "odo": 124832,
+      "liters": 37.98,
+      "price_per_liter": 1.653,
+      "total_cost": 62.78,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport - wind tegen",
+      "note": null
+    },
+    {
+      "date": "2024-04-27",
+      "odo": 125130,
+      "liters": 25.9,
+      "price_per_liter": 1.99,
+      "total_cost": 51.54,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport - 120 - wind tegen",
+      "note": null
+    },
+    {
+      "date": "2024-04-27",
+      "odo": 125470,
+      "liters": 35.77,
+      "price_per_liter": 2.169,
+      "total_cost": 77.59,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport - 123km/u wind tegen",
+      "note": null
+    },
+    {
+      "date": "2024-05-04",
+      "odo": 125937,
+      "liters": 39.17,
+      "price_per_liter": 1.955,
+      "total_cost": 76.58,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Terugweg wintersport.",
+      "note": null
+    },
+    {
+      "date": "2024-05-04",
+      "odo": 126329,
+      "liters": 36.44,
+      "price_per_liter": 1.623,
+      "total_cost": 59.14,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport terug. 124km/u wind mee",
+      "note": null
+    },
+    {
+      "date": "2024-05-20",
+      "odo": 126888,
+      "liters": 37.68,
+      "price_per_liter": 1.979,
+      "total_cost": 74.57,
+      "full_tank": true,
+      "tire_season": "winter",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Laatste deel wintersport. Grootste deel met dakkoffer",
+      "note": null
+    },
+    {
+      "date": "2024-07-22",
+      "odo": 127847,
+      "liters": 24.13,
+      "price_per_liter": 2.029,
+      "total_cost": 48.96,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Start vakantie",
+      "note": null
+    },
+    {
+      "date": "2024-07-25",
+      "odo": 128306,
+      "liters": 30.55,
+      "price_per_liter": 1.811,
+      "total_cost": 55.32,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Vakantie wales",
+      "note": null
+    },
+    {
+      "date": "2024-07-27",
+      "odo": 128834,
+      "liters": 35.85,
+      "price_per_liter": 1.696,
+      "total_cost": 60.79,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2024-08-01",
+      "odo": 129155,
+      "liters": 21.54,
+      "price_per_liter": 2.201,
+      "total_cost": 47.41,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Vakantie wales",
+      "note": null
+    },
+    {
+      "date": "2024-08-04",
+      "odo": 129476,
+      "liters": 25.14,
+      "price_per_liter": 1.68,
+      "total_cost": 42.23,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Vakantie wales",
+      "note": null
+    },
+    {
+      "date": "2024-08-09",
+      "odo": 129843,
+      "liters": 26.81,
+      "price_per_liter": 1.765,
+      "total_cost": 47.32,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Vakantie wales",
+      "note": null
+    },
+    {
+      "date": "2024-08-13",
+      "odo": 130213,
+      "liters": 26,
+      "price_per_liter": 1.793,
+      "total_cost": 46.63,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Vakantie wales",
+      "note": null
+    },
+    {
+      "date": "2024-08-13",
+      "odo": 130402,
+      "liters": 13.16,
+      "price_per_liter": 1.712,
+      "total_cost": 22.53,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Vakantie wales",
+      "note": null
+    },
+    {
+      "date": "2024-08-14",
+      "odo": 130608,
+      "liters": 15.68,
+      "price_per_liter": 1.759,
+      "total_cost": 27.58,
+      "full_tank": true,
+      "tire_season": "zomer",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Vakantie wales",
+      "note": null
+    },
+    {
+      "date": "2025-01-08",
+      "odo": 133196,
+      "liters": 39.45,
+      "price_per_liter": 1.899,
+      "total_cost": 74.92,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2025-03-15",
+      "odo": 134112,
+      "liters": 37.99,
+      "price_per_liter": 1.879,
+      "total_cost": 71.38,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2025-03-31",
+      "odo": 134661,
+      "liters": 21.99,
+      "price_per_liter": 1.829,
+      "total_cost": 40.22,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2025-04-26",
+      "odo": 135254,
+      "liters": 41.7,
+      "price_per_liter": 1.45,
+      "total_cost": 60.47,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport",
+      "note": null
+    },
+    {
+      "date": "2025-04-26",
+      "odo": 135553,
+      "liters": 27.46,
+      "price_per_liter": 1.829,
+      "total_cost": 50.22,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport heen met dakkoffer",
+      "note": null
+    },
+    {
+      "date": "2025-04-26",
+      "odo": 135803,
+      "liters": 22.26,
+      "price_per_liter": 1.899,
+      "total_cost": 42.27,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport met dakkoffer",
+      "note": null
+    },
+    {
+      "date": "2025-05-03",
+      "odo": 136257,
+      "liters": 38.61,
+      "price_per_liter": 1.969,
+      "total_cost": 76.02,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport terug met dakkoffer",
+      "note": null
+    },
+    {
+      "date": "2025-05-03",
+      "odo": 136630,
+      "liters": 7.29,
+      "price_per_liter": 1.864,
+      "total_cost": 13.59,
+      "full_tank": false,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport terug met dakkoffer",
+      "note": null
+    },
+    {
+      "date": "2025-05-03",
+      "odo": 136755,
+      "liters": 39.23,
+      "price_per_liter": 1.434,
+      "total_cost": 56.26,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport terug met dakkoffer",
+      "note": null
+    },
+    {
+      "date": "2025-05-17",
+      "odo": 137239,
+      "liters": 37.57,
+      "price_per_liter": 1.859,
+      "total_cost": 69.84,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Grootste deel met dakkoffer",
+      "note": null
+    },
+    {
+      "date": "2025-06-14",
+      "odo": 138481,
+      "liters": 40.28,
+      "price_per_liter": 1.819,
+      "total_cost": 73.26,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2025-08-07",
+      "odo": 139295,
+      "liters": 20.09,
+      "price_per_liter": 1.829,
+      "total_cost": 36.74,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2025-08-10",
+      "odo": 139744,
+      "liters": 32.88,
+      "price_per_liter": 1.589,
+      "total_cost": 52.25,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Vakantie",
+      "note": null
+    },
+    {
+      "date": "2025-08-10",
+      "odo": 140055,
+      "liters": 34.13,
+      "price_per_liter": 1.549,
+      "total_cost": 52.87,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Vakantie, snel gereden (160)",
+      "note": null
+    },
+    {
+      "date": "2025-08-13",
+      "odo": 140371,
+      "liters": 20.44,
+      "price_per_liter": 1.599,
+      "total_cost": 32.68,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Vakantie rondrijden",
+      "note": null
+    },
+    {
+      "date": "2025-08-17",
+      "odo": 140817,
+      "liters": 29.78,
+      "price_per_liter": 1.719,
+      "total_cost": 51.19,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Vakantie rondrijden Rugen",
+      "note": null
+    },
+    {
+      "date": "2025-09-18",
+      "odo": 142362,
+      "liters": 38.87,
+      "price_per_liter": 1.839,
+      "total_cost": 71.48,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Na de vakantie",
+      "note": null
+    },
+    {
+      "date": "2025-09-19",
+      "odo": 142803,
+      "liters": 26.48,
+      "price_per_liter": 1.849,
+      "total_cost": 48.96,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Heen en terug naar Kerkrade",
+      "note": null
+    },
+    {
+      "date": "2025-12-19",
+      "odo": 143901,
+      "liters": 30.49,
+      "price_per_liter": 1.879,
+      "total_cost": 57.29,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2026-03-02",
+      "odo": 145156,
+      "liters": 34.81,
+      "price_per_liter": 1.989,
+      "total_cost": 69.24,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2026-04-25",
+      "odo": 146043,
+      "liters": 39.83,
+      "price_per_liter": 1.759,
+      "total_cost": 70.06,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport heen",
+      "note": null
+    },
+    {
+      "date": "2026-04-25",
+      "odo": 146362,
+      "liters": 26.11,
+      "price_per_liter": 1.99,
+      "total_cost": 51.96,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport heen",
+      "note": null
+    },
+    {
+      "date": "2026-04-25",
+      "odo": 146766,
+      "liters": 37.39,
+      "price_per_liter": 2.029,
+      "total_cost": 75.86,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport heen",
+      "note": null
+    },
+    {
+      "date": "2026-05-06",
+      "odo": 147184,
+      "liters": 33.43,
+      "price_per_liter": 2.08,
+      "total_cost": 69.53,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Terug van wintersport, rijden rondom Manigod",
+      "note": null
+    },
+    {
+      "date": "2026-05-08",
+      "odo": 147589,
+      "liters": 29.07,
+      "price_per_liter": 2.068,
+      "total_cost": 60.12,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport terugweg",
+      "note": null
+    },
+    {
+      "date": "2026-05-08",
+      "odo": 147923,
+      "liters": 31.2,
+      "price_per_liter": 1.789,
+      "total_cost": 55.82,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport terug",
+      "note": null
+    },
+    {
+      "date": "2026-05-08",
+      "odo": 148041,
+      "liters": 9.2,
+      "price_per_liter": 1.997,
+      "total_cost": 18.37,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": true,
+      "description": "Wintersport terug",
+      "note": null
+    },
+    {
+      "date": "2026-06-23",
+      "odo": 149100,
+      "liters": 39.58,
+      "price_per_liter": 2.189,
+      "total_cost": 86.64,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2026-08-08",
+      "odo": 149830,
+      "liters": 16.69,
+      "price_per_liter": 2.229,
+      "total_cost": 37.2,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": "Voor de vakantie naar Terschelling",
+      "note": null
+    },
+    {
+      "date": "2026-09-12",
+      "odo": 150498,
+      "liters": 37.5,
+      "price_per_liter": 2.339,
+      "total_cost": 87.71,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    },
+    {
+      "date": "2026-10-17",
+      "odo": 151369,
+      "liters": 38.89,
+      "price_per_liter": 2.329,
+      "total_cost": 90.57,
+      "full_tank": true,
+      "tire_season": "4-seizoenen",
+      "has_trailer": false,
+      "has_roof_box": false,
+      "description": null,
+      "note": null
+    }
+  ],
+  "expenses": [
+    {
+      "date": "2020-12-17",
+      "category": "onderhoud",
+      "amount": 920.31,
+      "description": "Onderhoud"
+    },
+    {
+      "date": "2020-12-31",
+      "category": "bandenwissel",
+      "amount": 589.9,
+      "description": "Nieuwe voorbanden (winter)"
+    },
+    {
+      "date": "2021-04-15",
+      "category": "bandenwissel",
+      "amount": 92.5,
+      "description": null
+    },
+    {
+      "date": "2021-04-15",
+      "category": "onderhoud",
+      "amount": 27.73,
+      "description": "Apk"
+    },
+    {
+      "date": "2021-12-16",
+      "category": "onderhoud",
+      "amount": 417.88,
+      "description": "Jaarlijks onderhoud"
+    },
+    {
+      "date": "2023-01-03",
+      "category": "onderhoud",
+      "amount": 356.4,
+      "description": "Kleine beurt"
+    },
+    {
+      "date": "2023-01-03",
+      "category": "onderhoud",
+      "amount": 74.84,
+      "description": "Wissel naar winterband"
+    },
+    {
+      "date": "2023-06-07",
+      "category": "onderhoud",
+      "amount": 565.04,
+      "description": "DBCAM, bandenwissel en onderhoud"
+    },
+    {
+      "date": "2024-01-04",
+      "category": "onderhoud",
+      "amount": 143.7,
+      "description": "Apk + stuurkogelhoes 2 keer vervangen"
+    },
+    {
+      "date": "2024-01-19",
+      "category": "onderhoud",
+      "amount": 481.74,
+      "description": "Onderhoud 120.000"
+    },
+    {
+      "date": "2024-01-19",
+      "category": "onderhoud",
+      "amount": 91.5,
+      "description": "Bandenwissel"
+    },
+    {
+      "date": "2024-12-06",
+      "category": "onderhoud",
+      "amount": 1082.17,
+      "description": "Wissel naar 4-seizoenen banden"
+    },
+    {
+      "date": "2024-12-29",
+      "category": "onderhoud",
+      "amount": -265,
+      "description": null
+    },
+    {
+      "date": "2024-12-31",
+      "category": "was",
+      "amount": 0,
+      "description": null
+    }
+  ],
+  "odometer_readings": [
+    {
+      "date": "2020-02-18",
+      "odo": 78170
+    },
+    {
+      "date": "2020-03-05",
+      "odo": 78779
+    },
+    {
+      "date": "2020-03-06",
+      "odo": 79096
+    },
+    {
+      "date": "2020-03-07",
+      "odo": 79555
+    },
+    {
+      "date": "2020-03-13",
+      "odo": 79773
+    },
+    {
+      "date": "2020-03-13",
+      "odo": 80010
+    },
+    {
+      "date": "2020-03-13",
+      "odo": 80276
+    },
+    {
+      "date": "2020-03-31",
+      "odo": 80709
+    },
+    {
+      "date": "2020-04-30",
+      "odo": 80997
+    },
+    {
+      "date": "2020-05-18",
+      "odo": 81352
+    },
+    {
+      "date": "2020-05-31",
+      "odo": 81977
+    },
+    {
+      "date": "2020-06-30",
+      "odo": 82272
+    },
+    {
+      "date": "2020-07-31",
+      "odo": 82949
+    },
+    {
+      "date": "2020-08-13",
+      "odo": 83166
+    },
+    {
+      "date": "2020-08-31",
+      "odo": 83838
+    },
+    {
+      "date": "2020-09-30",
+      "odo": 84272
+    },
+    {
+      "date": "2020-10-22",
+      "odo": 84744
+    },
+    {
+      "date": "2020-10-31",
+      "odo": 85022
+    },
+    {
+      "date": "2020-11-30",
+      "odo": 85809
+    },
+    {
+      "date": "2020-12-23",
+      "odo": 86626
+    },
+    {
+      "date": "2020-12-31",
+      "odo": 86723
+    },
+    {
+      "date": "2021-01-31",
+      "odo": 87811
+    },
+    {
+      "date": "2021-02-09",
+      "odo": 88267
+    },
+    {
+      "date": "2021-03-31",
+      "odo": 89067
+    },
+    {
+      "date": "2021-04-30",
+      "odo": 89465
+    },
+    {
+      "date": "2021-05-31",
+      "odo": 90345
+    },
+    {
+      "date": "2021-06-13",
+      "odo": 90491
+    },
+    {
+      "date": "2021-06-30",
+      "odo": 90775
+    },
+    {
+      "date": "2021-07-31",
+      "odo": 91539
+    },
+    {
+      "date": "2021-08-29",
+      "odo": 92356
+    },
+    {
+      "date": "2021-09-30",
+      "odo": 92793
+    },
+    {
+      "date": "2021-12-11",
+      "odo": 93382
+    },
+    {
+      "date": "2021-12-18",
+      "odo": 93929
+    },
+    {
+      "date": "2021-12-24",
+      "odo": 94465
+    },
+    {
+      "date": "2021-12-31",
+      "odo": 94939
+    },
+    {
+      "date": "2022-01-24",
+      "odo": 95236
+    },
+    {
+      "date": "2022-02-24",
+      "odo": 95561
+    },
+    {
+      "date": "2022-03-31",
+      "odo": 96365
+    },
+    {
+      "date": "2022-04-01",
+      "odo": 96697
+    },
+    {
+      "date": "2022-04-01",
+      "odo": 97006
+    },
+    {
+      "date": "2022-04-04",
+      "odo": 97339
+    },
+    {
+      "date": "2022-04-04",
+      "odo": 97662
+    },
+    {
+      "date": "2022-04-04",
+      "odo": 98057
+    },
+    {
+      "date": "2022-04-21",
+      "odo": 98388
+    },
+    {
+      "date": "2022-04-23",
+      "odo": 98753
+    },
+    {
+      "date": "2022-04-23",
+      "odo": 99051
+    },
+    {
+      "date": "2022-04-23",
+      "odo": 99442
+    },
+    {
+      "date": "2022-05-07",
+      "odo": 99964
+    },
+    {
+      "date": "2022-05-07",
+      "odo": 100317
+    },
+    {
+      "date": "2022-05-31",
+      "odo": 101215
+    },
+    {
+      "date": "2022-06-01",
+      "odo": 101254
+    },
+    {
+      "date": "2022-06-30",
+      "odo": 101744
+    },
+    {
+      "date": "2022-07-17",
+      "odo": 102290
+    },
+    {
+      "date": "2022-07-20",
+      "odo": 102594
+    },
+    {
+      "date": "2022-08-31",
+      "odo": 104974
+    },
+    {
+      "date": "2022-09-21",
+      "odo": 105952
+    },
+    {
+      "date": "2022-10-01",
+      "odo": 106145
+    },
+    {
+      "date": "2022-10-31",
+      "odo": 107038
+    },
+    {
+      "date": "2022-11-09",
+      "odo": 107391
+    },
+    {
+      "date": "2022-12-28",
+      "odo": 108590
+    },
+    {
+      "date": "2023-01-22",
+      "odo": 109461
+    },
+    {
+      "date": "2023-03-31",
+      "odo": 110220
+    },
+    {
+      "date": "2023-04-22",
+      "odo": 110684
+    },
+    {
+      "date": "2023-04-29",
+      "odo": 111219
+    },
+    {
+      "date": "2023-04-29",
+      "odo": 111471
+    },
+    {
+      "date": "2023-04-29",
+      "odo": 111874
+    },
+    {
+      "date": "2023-05-06",
+      "odo": 112283
+    },
+    {
+      "date": "2023-05-06",
+      "odo": 112674
+    },
+    {
+      "date": "2023-05-18",
+      "odo": 113200
+    },
+    {
+      "date": "2023-06-30",
+      "odo": 114374
+    },
+    {
+      "date": "2023-07-23",
+      "odo": 114960
+    },
+    {
+      "date": "2023-07-23",
+      "odo": 115288
+    },
+    {
+      "date": "2023-07-23",
+      "odo": 115560
+    },
+    {
+      "date": "2023-07-24",
+      "odo": 115941
+    },
+    {
+      "date": "2023-08-02",
+      "odo": 116437
+    },
+    {
+      "date": "2023-08-06",
+      "odo": 116873
+    },
+    {
+      "date": "2023-08-06",
+      "odo": 117191
+    },
+    {
+      "date": "2023-08-07",
+      "odo": 117372
+    },
+    {
+      "date": "2023-08-07",
+      "odo": 117679
+    },
+    {
+      "date": "2023-08-07",
+      "odo": 117900
+    },
+    {
+      "date": "2023-08-31",
+      "odo": 118495
+    },
+    {
+      "date": "2023-09-30",
+      "odo": 118752
+    },
+    {
+      "date": "2023-10-21",
+      "odo": 119131
+    },
+    {
+      "date": "2023-10-31",
+      "odo": 119194
+    },
+    {
+      "date": "2023-11-30",
+      "odo": 119662
+    },
+    {
+      "date": "2023-12-31",
+      "odo": 120371
+    },
+    {
+      "date": "2024-01-01",
+      "odo": 120373
+    },
+    {
+      "date": "2024-02-29",
+      "odo": 121538
+    },
+    {
+      "date": "2024-03-11",
+      "odo": 121687
+    },
+    {
+      "date": "2024-03-12",
+      "odo": 122082
+    },
+    {
+      "date": "2024-03-12",
+      "odo": 122476
+    },
+    {
+      "date": "2024-03-16",
+      "odo": 122758
+    },
+    {
+      "date": "2024-03-16",
+      "odo": 123187
+    },
+    {
+      "date": "2024-04-21",
+      "odo": 124432
+    },
+    {
+      "date": "2024-04-27",
+      "odo": 124832
+    },
+    {
+      "date": "2024-04-27",
+      "odo": 125130
+    },
+    {
+      "date": "2024-04-27",
+      "odo": 125470
+    },
+    {
+      "date": "2024-05-04",
+      "odo": 125937
+    },
+    {
+      "date": "2024-05-04",
+      "odo": 126329
+    },
+    {
+      "date": "2024-05-20",
+      "odo": 126888
+    },
+    {
+      "date": "2024-07-22",
+      "odo": 127847
+    },
+    {
+      "date": "2024-07-25",
+      "odo": 128306
+    },
+    {
+      "date": "2024-07-27",
+      "odo": 128834
+    },
+    {
+      "date": "2024-08-01",
+      "odo": 129155
+    },
+    {
+      "date": "2024-08-04",
+      "odo": 129476
+    },
+    {
+      "date": "2024-08-09",
+      "odo": 129843
+    },
+    {
+      "date": "2024-08-13",
+      "odo": 130213
+    },
+    {
+      "date": "2024-08-13",
+      "odo": 130402
+    },
+    {
+      "date": "2024-08-14",
+      "odo": 130608
+    },
+    {
+      "date": "2024-09-30",
+      "odo": 131177
+    },
+    {
+      "date": "2024-10-31",
+      "odo": 132087
+    },
+    {
+      "date": "2024-11-30",
+      "odo": 132212
+    },
+    {
+      "date": "2025-01-08",
+      "odo": 133196
+    },
+    {
+      "date": "2025-03-15",
+      "odo": 134112
+    },
+    {
+      "date": "2025-03-31",
+      "odo": 134661
+    },
+    {
+      "date": "2025-04-26",
+      "odo": 135254
+    },
+    {
+      "date": "2025-04-26",
+      "odo": 135553
+    },
+    {
+      "date": "2025-04-26",
+      "odo": 135803
+    },
+    {
+      "date": "2025-05-03",
+      "odo": 136257
+    },
+    {
+      "date": "2025-05-03",
+      "odo": 136630
+    },
+    {
+      "date": "2025-05-03",
+      "odo": 136755
+    },
+    {
+      "date": "2025-05-17",
+      "odo": 137239
+    },
+    {
+      "date": "2025-06-14",
+      "odo": 138481
+    },
+    {
+      "date": "2025-08-07",
+      "odo": 139295
+    },
+    {
+      "date": "2025-08-10",
+      "odo": 139744
+    },
+    {
+      "date": "2025-08-10",
+      "odo": 140055
+    },
+    {
+      "date": "2025-08-13",
+      "odo": 140371
+    },
+    {
+      "date": "2025-08-17",
+      "odo": 140817
+    },
+    {
+      "date": "2025-09-18",
+      "odo": 142362
+    },
+    {
+      "date": "2025-09-19",
+      "odo": 142803
+    },
+    {
+      "date": "2025-12-19",
+      "odo": 143901
+    },
+    {
+      "date": "2026-01-31",
+      "odo": 144739
+    },
+    {
+      "date": "2026-02-28",
+      "odo": 145130
+    },
+    {
+      "date": "2026-03-02",
+      "odo": 145156
+    },
+    {
+      "date": "2026-03-31",
+      "odo": 145448
+    },
+    {
+      "date": "2026-04-25",
+      "odo": 146043
+    },
+    {
+      "date": "2026-04-25",
+      "odo": 146362
+    },
+    {
+      "date": "2026-04-25",
+      "odo": 146766
+    },
+    {
+      "date": "2026-05-06",
+      "odo": 147184
+    },
+    {
+      "date": "2026-05-08",
+      "odo": 147589
+    },
+    {
+      "date": "2026-05-08",
+      "odo": 147923
+    },
+    {
+      "date": "2026-05-08",
+      "odo": 148041
+    },
+    {
+      "date": "2026-06-23",
+      "odo": 149100
+    },
+    {
+      "date": "2026-08-08",
+      "odo": 149830
+    },
+    {
+      "date": "2026-09-12",
+      "odo": 150498
+    },
+    {
+      "date": "2026-10-17",
+      "odo": 151369
+    }
+  ],
+  "recurring_costs": [
+    {
+      "category": "wegenbelasting",
+      "amount": 50,
+      "start_date": "2020-03-01",
+      "end_date": "2024-12-31"
+    },
+    {
+      "category": "wegenbelasting",
+      "amount": 88,
+      "start_date": "2025-01-01",
+      "end_date": "2026-01-31"
+    },
+    {
+      "category": "wegenbelasting",
+      "amount": 121.66,
+      "start_date": "2026-02-01",
+      "end_date": null
+    },
+    {
+      "category": "verzekering",
+      "amount": 99.1,
+      "start_date": "2020-03-01",
+      "end_date": "2021-04-30"
+    },
+    {
+      "category": "verzekering",
+      "amount": 97.68,
+      "start_date": "2021-05-01",
+      "end_date": "2021-11-30"
+    },
+    {
+      "category": "verzekering",
+      "amount": 86.7,
+      "start_date": "2021-12-01",
+      "end_date": "2022-01-31"
+    },
+    {
+      "category": "verzekering",
+      "amount": 82.28,
+      "start_date": "2022-02-01",
+      "end_date": null
+    },
+    {
+      "category": "afschrijving",
+      "amount": 150,
+      "start_date": "2020-03-01",
+      "end_date": "2022-02-28"
+    },
+    {
+      "category": "afschrijving",
+      "amount": 200,
+      "start_date": "2022-03-01",
+      "end_date": "2024-07-31"
+    },
+    {
+      "category": "afschrijving",
+      "amount": 300,
+      "start_date": "2024-08-01",
+      "end_date": null
+    }
+  ]
+}

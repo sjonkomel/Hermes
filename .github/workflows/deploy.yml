@@ -1,0 +1,73 @@
+name: Deploy to Bunny
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-bunny
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install & build (typecheck included)
+        run: |
+          npm ci
+          npm run build
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+
+      # Bunny Storage HTTP API — endpoint assumes the Frankfurt region
+      # (storage.bunnycdn.com). If your zone lives elsewhere, use the
+      # hostname shown on the zone's Access tab instead.
+      - name: Clean storage zone
+        run: |
+          set -euo pipefail
+          curl -fsS -X DELETE "https://storage.bunnycdn.com/${ZONE}/" \
+            -H "AccessKey: ${KEY}" \
+            -H "allowRootDelete: true"
+          echo "Zone emptied."
+        env:
+          ZONE: hermes
+          KEY: ${{ secrets.BUNNY_STORAGE_KEY }}
+
+      - name: Upload dist/
+        run: |
+          set -euo pipefail
+          cd dist
+          find . -type f -print0 | while IFS= read -r -d '' f; do
+            rel="${f#./}"
+            mime=$(file --mime-type -b "$rel")
+            echo "PUT ${rel} (${mime})"
+            curl -fsS -o /dev/null -X PUT "https://storage.bunnycdn.com/${ZONE}/${rel}" \
+              -H "AccessKey: ${KEY}" \
+              -H "Content-Type: ${mime}" \
+              --upload-file "$rel" || { echo "FAILED: ${rel}"; exit 1; }
+          done
+          echo "Upload complete."
+        env:
+          ZONE: hermes
+          KEY: ${{ secrets.BUNNY_STORAGE_KEY }}
+
+      - name: Purge CDN cache
+        run: |
+          set -euo pipefail
+          curl -fsS -o /dev/null -X POST "https://api.bunny.net/pullzone/${ID}/purgeCache" \
+            -H "AccessKey: ${KEY}" \
+            -H "Content-Type: application/json" \
+            -d '{}'
+          echo "Cache purged."
+        env:
+          ID: ${{ secrets.BUNNY_PULLZONE_ID }}
+          KEY: ${{ secrets.BUNNY_API_KEY }}
