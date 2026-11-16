@@ -20,9 +20,12 @@ jobs:
           node-version: 20
           cache: npm
 
+      # npm install i.p.v. npm ci: er is nog geen package-lock.json in de repo.
+      # Na een lokale `npm install` + commit van package-lock.json kan dit
+      # terug naar `npm ci`.
       - name: Install & build (typecheck included)
         run: |
-          npm ci
+          npm install
           npm run build
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
