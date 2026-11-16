@@ -1,14 +1,16 @@
 {
   "name": "hermes",
   "private": true,
-  "version": "0.2.1",
+  "version": "0.2.2",
   "type": "module",
   "engines": {
     "node": ">=18"
   },
   "scripts": {
     "dev": "vite",
+    "predev": "node scripts/gen-icons.mjs",
     "build": "tsc --noEmit && vite build",
+    "prebuild": "node scripts/gen-icons.mjs",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "migrate:sheet": "node scripts/migrate-sheet.mjs"
