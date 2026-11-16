@@ -11,6 +11,8 @@ export interface Vehicle {
   purchase_price: number | null;
   start_odo: number | null;
   residual_value: number | null;
+  maintenance_reserve: number | null;
+  maintenance_reserve_since: string | null;
   active: boolean;
   sold_at: string | null;
   sale_price: number | null;

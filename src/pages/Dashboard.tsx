@@ -77,16 +77,25 @@ export function Dashboard() {
         )}
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
         <Card label="Gem. kosten / maand" value={eur(stats.avgCostPerMonth)} />
         <Card label="Gem. km / maand" value={num(stats.avgKmPerMonth, 0)} />
-        <Card label="Kosten per km" value={eur(stats.costPerKm, 3)} />
+        <Card
+          label="Kosten per km"
+          value={eur(stats.costPerKm, 3)}
+          sub={stats.costPerKmExReserve != null ? `excl. reserve: ${eur(stats.costPerKmExReserve, 3)}/km` : undefined}
+        />
         <Card
           label={current.energy === "ev" ? "Verbruik (kWh/100km)" : "Verbruik (l/100km)"}
           value={
             current.energy === "ev"
               ? num(stats.chargeConsumption)
               : num(stats.fuelConsumption)
+          }
+          sub={
+            current.energy === "hybride" && stats.chargeConsumption != null
+              ? `elektrisch: ${num(stats.chargeConsumption, 1)} kWh/100km`
+              : undefined
           }
         />
         <Card
@@ -101,6 +110,11 @@ export function Dashboard() {
               ? `gereserveerd: ${eur(stats.reservedDepreciation)}`
               : undefined
           }
+        />
+        <Card
+          label="Onderhoudssaldo"
+          value={eur(stats.maintenance.saldo)}
+          sub={`gereserveerd ${eur(stats.maintenance.reserved)} · besteed ${eur(stats.maintenance.spent)}`}
         />
       </div>
 

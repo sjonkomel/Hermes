@@ -50,16 +50,22 @@ export function Vehicles() {
 function VehicleCard({ vehicle, onChanged }: { vehicle: Vehicle; onChanged: () => void }) {
   const { data, refresh } = useVehicleData(vehicle.id);
 
-  const rename = async () => {
-    const newName = prompt("Nieuwe naam:", vehicle.name);
-    if (newName == null || !newName.trim() || newName.trim() === vehicle.name) return;
-    const { error } = await supabase
-      .from("vehicles")
-      .update({ name: newName.trim() })
-      .eq("id", vehicle.id);
-    if (error) alert("Hernoemen mislukt: " + error.message);
-    else onChanged();
-  };
+  const [editing, setEditing] = useState(false);
+
+  // onderhoudstracker: reserve sinds startdatum vs werkelijk onderhoud
+  const MAINT = ["onderhoud", "bandenwissel", "apk"];
+  const maintSpent = data.expenses
+    .filter((e) => MAINT.includes(e.category))
+    .reduce((s, e) => s + e.amount, 0);
+  let maintReserved = 0;
+  if (vehicle.maintenance_reserve != null) {
+    const since = vehicle.maintenance_reserve_since ?? vehicle.purchase_date;
+    if (since) {
+      const [sy, sm] = since.split("-").map(Number);
+      const [ey, em] = (vehicle.sold_at ?? new Date().toISOString().slice(0, 10)).split("-").map(Number);
+      maintReserved = Math.max((ey - sy) * 12 + (em - sm), 0) * vehicle.maintenance_reserve;
+    }
+  }
 
   const sell = async () => {
     const priceStr = prompt(`Verkoopprijs van "${vehicle.name}" (€):`);
@@ -99,8 +105,8 @@ function VehicleCard({ vehicle, onChanged }: { vehicle: Vehicle; onChanged: () =
           </p>
         </div>
         <div className="flex gap-2">
-          <button onClick={rename} className="text-sm text-sky-700 bg-sky-50 border border-sky-200 px-3 py-1.5 rounded hover:bg-sky-100">
-            Hernoem…
+          <button onClick={() => setEditing((s) => !s)} className="text-sm text-sky-700 bg-sky-50 border border-sky-200 px-3 py-1.5 rounded hover:bg-sky-100">
+            {editing ? "Annuleer" : "Wijzig…"}
           </button>
           {vehicle.active && (
             <button onClick={sell} className="text-sm text-amber-700 bg-amber-50 border border-amber-200 px-3 py-1.5 rounded hover:bg-amber-100">
@@ -109,6 +115,36 @@ function VehicleCard({ vehicle, onChanged }: { vehicle: Vehicle; onChanged: () =
           )}
         </div>
       </div>
+
+      {editing && (
+        <VehicleEditForm
+          vehicle={vehicle}
+          onSaved={async () => {
+            setEditing(false);
+            onChanged();
+          }}
+        />
+      )}
+
+      {vehicle.maintenance_reserve != null && (
+        <div className="border-t border-slate-100 pt-2 text-sm">
+          <h4 className="text-xs font-medium text-slate-500 uppercase tracking-wide">
+            Onderhoudsreserve ({eur(vehicle.maintenance_reserve)}/maand
+            {vehicle.maintenance_reserve_since ? ` sinds ${vehicle.maintenance_reserve_since}` : ""})
+          </h4>
+          <div className="flex flex-wrap gap-x-4 gap-y-1 mt-1">
+            <span>
+              gereserveerd: <strong>{eur(maintReserved)}</strong>
+            </span>
+            <span>
+              besteed aan onderhoud/apk/banden: <strong>{eur(maintSpent)}</strong>
+            </span>
+            <span className={maintReserved - maintSpent < 0 ? "text-red-600" : "text-emerald-700"}>
+              saldo: <strong>{eur(maintReserved - maintSpent)}</strong>
+            </span>
+          </div>
+        </div>
+      )}
 
       <RecurringList vehicleId={vehicle.id} recurring={data.recurringCosts} onChanged={refresh} />
     </div>
@@ -223,6 +259,92 @@ function RecurringList({
     </div>
   );
 }
+
+function VehicleEditForm({ vehicle, onSaved }: { vehicle: Vehicle; onSaved: () => void }) {
+  const [name, setName] = useState(vehicle.name);
+  const [type, setType] = useState<VehicleType>(vehicle.type);
+  const [energy, setEnergy] = useState<EnergyType>(vehicle.energy);
+  const [purchaseDate, setPurchaseDate] = useState(vehicle.purchase_date ?? "");
+  const [purchasePrice, setPurchasePrice] = useState(vehicle.purchase_price != null ? String(vehicle.purchase_price) : "");
+  const [startOdo, setStartOdo] = useState(vehicle.start_odo != null ? String(vehicle.start_odo) : "");
+  const [maintReserve, setMaintReserve] = useState(vehicle.maintenance_reserve != null ? String(vehicle.maintenance_reserve) : "");
+  const [maintSince, setMaintSince] = useState(vehicle.maintenance_reserve_since ?? "");
+  const [busy, setBusy] = useState(false);
+
+  const submit = async (e: FormEvent) => {
+    e.preventDefault();
+    setBusy(true);
+    const { error } = await supabase
+      .from("vehicles")
+      .update({
+        name: name.trim(),
+        type,
+        energy,
+        purchase_date: purchaseDate || null,
+        purchase_price: purchasePrice ? parseFloat(purchasePrice.replace(",", ".")) : null,
+        start_odo: startOdo ? parseInt(startOdo, 10) : null,
+        maintenance_reserve: maintReserve ? parseFloat(maintReserve.replace(",", ".")) : null,
+        maintenance_reserve_since: maintSince || null,
+      })
+      .eq("id", vehicle.id);
+    setBusy(false);
+    if (!error) onSaved();
+    else alert("Opslaan mislukt: " + error.message);
+  };
+
+  return (
+    <form onSubmit={submit} className="bg-slate-50 border border-slate-200 rounded-lg p-4 grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+      <label className="block md:col-span-2">
+        <span className="text-xs text-slate-500">Naam</span>
+        <input required value={name} onChange={(e) => setName(e.target.value)} className={inputCls} />
+      </label>
+      <label className="block">
+        <span className="text-xs text-slate-500">Soort</span>
+        <select value={type} onChange={(e) => setType(e.target.value as VehicleType)} className={inputCls + " bg-white"}>
+          <option value="auto">auto</option>
+          <option value="motor">motor</option>
+          <option value="overig">overig</option>
+        </select>
+      </label>
+      <label className="block">
+        <span className="text-xs text-slate-500">Energie</span>
+        <select value={energy} onChange={(e) => setEnergy(e.target.value as EnergyType)} className={inputCls + " bg-white"}>
+          <option value="benzine">benzine</option>
+          <option value="diesel">diesel</option>
+          <option value="ev">elektrisch</option>
+          <option value="hybride">hybride (PHEV)</option>
+        </select>
+      </label>
+      <label className="block">
+        <span className="text-xs text-slate-500">Aankoopdatum</span>
+        <input type="date" value={purchaseDate} onChange={(e) => setPurchaseDate(e.target.value)} className={inputCls} />
+      </label>
+      <label className="block">
+        <span className="text-xs text-slate-500">Aankoopbedrag (€)</span>
+        <input inputMode="decimal" value={purchasePrice} onChange={(e) => setPurchasePrice(e.target.value)} className={inputCls} />
+      </label>
+      <label className="block">
+        <span className="text-xs text-slate-500">Km-stand bij ingebruikname</span>
+        <input inputMode="numeric" value={startOdo} onChange={(e) => setStartOdo(e.target.value)} className={inputCls} />
+      </label>
+      <label className="block">
+        <span className="text-xs text-slate-500">Onderhoudsreserve (€/maand)</span>
+        <input inputMode="decimal" value={maintReserve} onChange={(e) => setMaintReserve(e.target.value)} className={inputCls} />
+      </label>
+      <label className="block">
+        <span className="text-xs text-slate-500">Reserve geldt sinds</span>
+        <input type="date" value={maintSince} onChange={(e) => setMaintSince(e.target.value)} className={inputCls} />
+      </label>
+      <div className="flex items-end col-span-2 md:col-span-1">
+        <button disabled={busy} className="bg-slate-900 text-white px-4 py-1.5 rounded hover:bg-slate-800 disabled:opacity-50">
+          Opslaan
+        </button>
+      </div>
+    </form>
+  );
+}
+
+const inputCls = "w-full border border-slate-300 rounded px-2 py-1.5 mt-0.5";
 
 function VehicleForm({ onSaved }: { onSaved: () => void }) {
   const [name, setName] = useState("");

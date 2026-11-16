@@ -35,7 +35,13 @@ export interface VehicleStats {
   monthlyCosts: MonthlyCost[];
   categoryTotals: Record<string, number>;
   consumptionSeries: ConsumptionPoint[];
+  chargeSeries: ConsumptionPoint[]; // elektrisch verbruik per volle laadbeurt
   fuelPriceSeries: { date: string; price: number }[];
+  energyCostSeries: { month: string; eurPerKm: number }[]; // gecombineerd: brandstof+lading per km
+  // onderhoudsreserve vs werkelijk onderhoud
+  maintenance: { reserved: number; spent: number; saldo: number };
+  // kosten per km zonder de afschrijvingsreserve (reserve is geen kasuitgaaf)
+  costPerKmExReserve: number | null;
   reservedDepreciation: number; // totaal afgeschreven via maandreserve
   currentValue: number | null; // aankoop - reserve (of verkoopprijs bij verkoop)
   finalDepreciation: number | null; // aankoop - verkoop (na verkoop)
@@ -171,6 +177,57 @@ export function computeStats(vehicle: Vehicle, data: VehicleData): VehicleStats 
   }
   const totalCost = monthlyCosts.reduce((s, m) => s + m.total, 0);
 
+  // ---- energiekosten per km, per maand (benzine + elektrisch gecombineerd)
+  const kmByMonth = new Map<string, { min: number; max: number }>();
+  for (const p of odoPoints) {
+    const mk = p.date.slice(0, 7);
+    const e = kmByMonth.get(mk);
+    if (!e) kmByMonth.set(mk, { min: p.odo, max: p.odo });
+    else {
+      if (p.odo < e.min) e.min = p.odo;
+      if (p.odo > e.max) e.max = p.odo;
+    }
+  }
+  const costByMonth = new Map<string, number>();
+  for (const f of fillups)
+    if (f.total_cost != null) {
+      const mk = f.date.slice(0, 7);
+      costByMonth.set(mk, (costByMonth.get(mk) ?? 0) + f.total_cost);
+    }
+  for (const c of charges)
+    if (c.total_cost != null) {
+      const mk = c.date.slice(0, 7);
+      costByMonth.set(mk, (costByMonth.get(mk) ?? 0) + c.total_cost);
+    }
+  const energyCostSeries: { month: string; eurPerKm: number }[] = [];
+  for (const [mk, e] of kmByMonth) {
+    const km = e.max - e.min;
+    const cost = costByMonth.get(mk) ?? 0;
+    if (km > 0 && cost > 0) energyCostSeries.push({ month: mk, eurPerKm: Number((cost / km).toFixed(3)) });
+  }
+  energyCostSeries.sort((a, b) => a.month.localeCompare(b.month));
+
+  // ---- onderhoudsreserve vs werkelijk onderhoud
+  const MAINT_CATEGORIES = ["onderhoud", "bandenwissel", "apk"];
+  const maintenanceSpent = expenses
+    .filter((e) => MAINT_CATEGORIES.includes(e.category))
+    .reduce((s, e) => s + e.amount, 0);
+  let maintenanceReserved = 0;
+  const maintReserve = vehicle.maintenance_reserve ?? null;
+  const maintSince = vehicle.maintenance_reserve_since ?? vehicle.purchase_date ?? null;
+  if (maintReserve != null && maintSince) {
+    const end = vehicle.sold_at ?? today;
+    const [sy, sm] = maintSince.split("-").map(Number);
+    const [ey, em] = end.split("-").map(Number);
+    const monthsElapsed = Math.max((ey - sy) * 12 + (em - sm), 0);
+    maintenanceReserved = monthsElapsed * maintReserve;
+  }
+  const maintenance = {
+    reserved: maintenanceReserved,
+    spent: maintenanceSpent,
+    saldo: maintenanceReserved - maintenanceSpent,
+  };
+
   // ---- brandstof
   const totalLiters = fillups.reduce((s, f) => s + (f.liters ?? 0), 0);
   const litersWithPrice = fillups.filter((f) => f.price_per_liter != null);
@@ -257,6 +314,11 @@ export function computeStats(vehicle: Vehicle, data: VehicleData): VehicleStats 
     monthlyCosts,
     categoryTotals,
     consumptionSeries: fuel.series,
+    chargeSeries: elec.series,
+    energyCostSeries,
+    maintenance,
+    costPerKmExReserve:
+      totalKm != null && totalKm > 0 ? (totalCost - reservedDepreciation) / totalKm : null,
     fuelPriceSeries: litersWithPrice.map((f) => ({
       date: f.date,
       price: f.price_per_liter as number,

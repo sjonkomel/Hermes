@@ -14,6 +14,8 @@ create table if not exists public.vehicles (
   purchase_price numeric(12,2),
   start_odo integer,
   residual_value numeric(12,2),          -- doel-restwaarde (afschrijvingsreserve)
+  maintenance_reserve numeric(12,2) default 50,  -- onderhoudsreserve per maand
+  maintenance_reserve_since date,                -- start van de onderhoudsreserve
   active boolean not null default true,
   sold_at date,
   sale_price numeric(12,2),
@@ -105,6 +107,10 @@ create index if not exists charges_vehicle_idx on public.charges (vehicle_id, da
 create index if not exists expenses_vehicle_idx on public.expenses (vehicle_id, date);
 create index if not exists odometer_vehicle_idx on public.odometer_readings (vehicle_id, date);
 create index if not exists recurring_vehicle_idx on public.recurring_costs (vehicle_id, start_date);
+
+-- Bestaande database: deze twee regels zijn toevoegingen (safe, idempotent).
+alter table public.vehicles add column if not exists maintenance_reserve numeric(12,2) default 50;
+alter table public.vehicles add column if not exists maintenance_reserve_since date;
 
 -- user_id wordt automatisch de ingelogde gebruiker (frontend stuurt hem niet mee;
 -- de RLS-check draait alsnog en auth.uid() is niet te vervalsen).
