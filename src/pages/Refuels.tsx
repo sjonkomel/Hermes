@@ -135,6 +135,47 @@ export function Refuels() {
         />
       )}
 
+      {stats && consumptionHistory.length > 0 && (
+        <div className="bg-white rounded-lg shadow-sm p-4">
+          <h3 className="text-sm font-medium text-slate-700 mb-3">Verbruikshistorie (per volle tank / laadbeurt)</h3>
+          <div style={{ height: 260 }}>
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={consumptionHistory}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                <XAxis dataKey="date" tick={{ fontSize: 11 }} />
+                <YAxis tick={{ fontSize: 11 }} />
+                <Tooltip />
+                <Legend wrapperStyle={{ fontSize: 11 }} />
+                <Line type="monotone" dataKey="l100" name="benzine (l/100km)" stroke="#f97316" dot={false} connectNulls />
+                <Line type="monotone" dataKey="kwh100" name="elektrisch (kWh/100km)" stroke="#0ea5e9" dot={false} connectNulls />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+      )}
+
+      {stats && stats.energyCostSeries.length > 1 && (
+        <div className="bg-white rounded-lg shadow-sm p-4">
+          <h3 className="text-sm font-medium text-slate-700 mb-3">
+            Energiekosten per km (brandstof + stroom, per maand)
+          </h3>
+          <div style={{ height: 260 }}>
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={stats.energyCostSeries}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                <XAxis dataKey="month" tick={{ fontSize: 11 }} />
+                <YAxis
+                  tick={{ fontSize: 11 }}
+                  tickFormatter={(v: number) => `€${v.toFixed(2)}`}
+                />
+                <Tooltip formatter={(v: number) => `€${v.toFixed(3)}/km`} />
+                <Line type="monotone" dataKey="eurPerKm" name="energie €/km" stroke="#22c55e" dot={false} />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+      )}
+
       {loading ? (
         <div className="text-sm text-slate-500">Laden…</div>
       ) : entries.length === 0 ? (
@@ -207,47 +248,6 @@ export function Refuels() {
                 })}
             </tbody>
           </table>
-        </div>
-      )}
-
-      {stats && consumptionHistory.length > 0 && (
-        <div className="bg-white rounded-lg shadow-sm p-4">
-          <h3 className="text-sm font-medium text-slate-700 mb-3">Verbruikshistorie (per volle tank / laadbeurt)</h3>
-          <div style={{ height: 260 }}>
-            <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={consumptionHistory}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                <XAxis dataKey="date" tick={{ fontSize: 11 }} />
-                <YAxis tick={{ fontSize: 11 }} />
-                <Tooltip />
-                <Legend wrapperStyle={{ fontSize: 11 }} />
-                <Line type="monotone" dataKey="l100" name="benzine (l/100km)" stroke="#f97316" dot={false} connectNulls />
-                <Line type="monotone" dataKey="kwh100" name="elektrisch (kWh/100km)" stroke="#0ea5e9" dot={false} connectNulls />
-              </LineChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-      )}
-
-      {stats && stats.energyCostSeries.length > 1 && (
-        <div className="bg-white rounded-lg shadow-sm p-4">
-          <h3 className="text-sm font-medium text-slate-700 mb-3">
-            Energiekosten per km (brandstof + stroom, per maand)
-          </h3>
-          <div style={{ height: 260 }}>
-            <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={stats.energyCostSeries}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                <XAxis dataKey="month" tick={{ fontSize: 11 }} />
-                <YAxis
-                  tick={{ fontSize: 11 }}
-                  tickFormatter={(v: number) => `€${v.toFixed(2)}`}
-                />
-                <Tooltip formatter={(v: number) => `€${v.toFixed(3)}/km`} />
-                <Line type="monotone" dataKey="eurPerKm" name="energie €/km" stroke="#22c55e" dot={false} />
-              </LineChart>
-            </ResponsiveContainer>
-          </div>
         </div>
       )}
     </div>
