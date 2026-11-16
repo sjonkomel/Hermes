@@ -106,6 +106,15 @@ create index if not exists expenses_vehicle_idx on public.expenses (vehicle_id, 
 create index if not exists odometer_vehicle_idx on public.odometer_readings (vehicle_id, date);
 create index if not exists recurring_vehicle_idx on public.recurring_costs (vehicle_id, start_date);
 
+-- user_id wordt automatisch de ingelogde gebruiker (frontend stuurt hem niet mee;
+-- de RLS-check draait alsnog en auth.uid() is niet te vervalsen).
+alter table public.vehicles            alter column user_id set default auth.uid();
+alter table public.fillups            alter column user_id set default auth.uid();
+alter table public.charges            alter column user_id set default auth.uid();
+alter table public.expenses           alter column user_id set default auth.uid();
+alter table public.odometer_readings  alter column user_id set default auth.uid();
+alter table public.recurring_costs    alter column user_id set default auth.uid();
+
 -- ---------------------------------------------------------------- RLS: alleen de eigenaar
 alter table public.vehicles enable row level security;
 alter table public.fillups enable row level security;

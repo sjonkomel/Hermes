@@ -140,13 +140,16 @@ export function computeStats(vehicle: Vehicle, data: VehicleData): VehicleStats 
 
   for (const rc of data.recurringCosts) {
     const end = rc.end_date && rc.end_date < periodEnd ? rc.end_date : periodEnd;
-    let cursor = rc.start_date;
-    if (cursor > periodEnd) continue;
-    while (cursor <= end) {
-      addCost(cursor, rc.category, rc.amount);
-      const d = new Date(cursor + "T00:00:00");
-      d.setMonth(d.getMonth() + 1, 1);
-      cursor = d.toISOString().slice(0, 10);
+    // Maand-rekenkunde puur numeriek: new Date/toISOString is
+    // tijdzone-afhankelijk en liet de cursor in UTC+1 terug springen
+    // (oneindige lus, bevroren dashboard).
+    const [sy, sm] = rc.start_date.split("-").map(Number);
+    const [ey, em] = end.split("-").map(Number);
+    let cy = sy, cm = sm;
+    while (cy < ey || (cy === ey && cm <= em)) {
+      addCost(`${cy}-${String(cm).padStart(2, "0")}-01`, rc.category, rc.amount);
+      cm += 1;
+      if (cm > 12) { cm = 1; cy += 1; }
     }
   }
   for (const f of fillups) if (f.total_cost != null) addCost(f.date, "brandstof", f.total_cost);
@@ -202,15 +205,10 @@ export function computeStats(vehicle: Vehicle, data: VehicleData): VehicleStats 
     .filter((rc) => rc.category === "afschrijving")
     .reduce((s, rc) => {
       const end = rc.end_date && rc.end_date < periodEnd ? rc.end_date : periodEnd;
-      let cursor = rc.start_date;
-      if (cursor > periodEnd) return s;
-      let months = 0;
-      while (cursor <= end) {
-        months += 1;
-        const d = new Date(cursor + "T00:00:00");
-        d.setMonth(d.getMonth() + 1, 1);
-        cursor = d.toISOString().slice(0, 10);
-      }
+      if (rc.start_date > periodEnd) return s;
+      const [sy, sm] = rc.start_date.split("-").map(Number);
+      const [ey, em] = end.split("-").map(Number);
+      const months = (ey - sy) * 12 + (em - sm) + 1;
       return s + months * rc.amount;
     }, 0);
 
