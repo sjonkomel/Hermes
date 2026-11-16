@@ -41,7 +41,7 @@ jobs:
             -H "allowRootDelete: true"
           echo "Zone emptied."
         env:
-          ZONE: hermes
+          ZONE: sz-hermes
           KEY: ${{ secrets.BUNNY_STORAGE_KEY }}
 
       - name: Upload dist/
@@ -59,7 +59,7 @@ jobs:
           done
           echo "Upload complete."
         env:
-          ZONE: hermes
+          ZONE: sz-hermes
           KEY: ${{ secrets.BUNNY_STORAGE_KEY }}
 
       - name: Purge CDN cache
