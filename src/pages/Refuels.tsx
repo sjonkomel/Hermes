@@ -250,13 +250,19 @@ function EntryForm({
           <input inputMode="numeric" required={!isEv} value={odo} onChange={(e) => setOdo(e.target.value)} className={inputCls} />
         </Field>
         <Field label={isEv ? "kWh" : "Liters"}>
-          <input inputMode="decimal" value={amount} onChange={(e) => setAmount(e.target.value)} className={inputCls} />
+          <input inputMode="decimal" required value={amount} onChange={(e) => setAmount(e.target.value)} className={inputCls} />
         </Field>
-        <Field label={isEv ? "Prijs per kWh" : "Prijs per liter"}>
-          <input inputMode="decimal" value={unitPrice} onChange={(e) => setUnitPrice(e.target.value)} className={inputCls} />
+        <Field label={isEv ? "Prijs per kWh (optioneel)" : "Prijs per liter (optioneel)"}>
+          <input
+            inputMode="decimal"
+            value={unitPrice}
+            onChange={(e) => setUnitPrice(e.target.value)}
+            placeholder="wordt berekend"
+            className={inputCls}
+          />
         </Field>
         <Field label="Totaalbedrag">
-          <input inputMode="decimal" value={totalCost} onChange={(e) => setTotalCost(e.target.value)} className={inputCls} />
+          <input inputMode="decimal" required value={totalCost} onChange={(e) => setTotalCost(e.target.value)} className={inputCls} />
         </Field>
         <Field label="Bandenseizoen">
           <select value={season} onChange={(e) => setSeason(e.target.value as TireSeason)} className={inputCls}>
