@@ -63,6 +63,7 @@ jobs:
           KEY: ${{ secrets.BUNNY_STORAGE_KEY }}
 
       - name: Purge CDN cache
+        continue-on-error: true  # nooit de deploy laten falen op purge; CDN-cache breekt anders de site
         run: |
           set -euo pipefail
           curl -fsS -o /dev/null -X POST "https://api.bunny.net/pullzone/${ID}/purgeCache" \
