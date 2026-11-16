@@ -15,10 +15,18 @@ export function Refuels() {
   );
   const { data, loading, refresh } = useVehicleData(current?.id ?? null);
   const stats = useMemo(() => (current ? computeStats(current, data) : null), [current, data]);
-  const [showForm, setShowForm] = useState(false);
+  const [formMode, setFormMode] = useState<null | "fuel" | "charge">(null);
 
   const isEv = current?.energy === "ev";
-  const entries = current ? (isEv ? data.charges : data.fillups) : [];
+  const isHybrid = current?.energy === "hybride";
+  // PHEV: tankbeurten én laadsessies door elkaar in dit overzicht
+  const entries = current
+    ? isEv
+      ? data.charges
+      : isHybrid
+      ? [...data.fillups, ...data.charges]
+      : data.fillups
+    : [];
 
   const consumptionByEntry = useMemo(() => {
     const map = new Map<string, string>();
@@ -60,27 +68,43 @@ export function Refuels() {
         </select>
         {stats && (
           <span className="text-xs text-slate-500">
-            {isEv
-              ? `gem. ${stats.chargeConsumption?.toFixed(1) ?? "–"} kWh/100km · gem. ${eur(stats.avgPricePerKwh, 3)}/kWh`
-              : `gem. ${stats.fuelConsumption?.toFixed(1) ?? "–"} l/100km · gem. ${eur(stats.avgPricePerLiter, 3)}/l`}
+            {!isEv &&
+              `gem. ${stats.fuelConsumption?.toFixed(1) ?? "–"} l/100km · gem. ${eur(stats.avgPricePerLiter, 3)}/l`}
+            {!isEv && isHybrid && data.charges.length > 0 && " · "}
+            {(isEv || isHybrid) &&
+              data.charges.length > 0 &&
+              `gem. ${stats.chargeConsumption?.toFixed(1) ?? "–"} kWh/100km · gem. ${eur(stats.avgPricePerKwh, 3)}/kWh`}
           </span>
         )}
-        <button
-          onClick={() => setShowForm((s) => !s)}
-          disabled={current.sold_at != null}
-          className="bg-slate-900 text-white text-sm px-3 py-1.5 rounded hover:bg-slate-800 disabled:opacity-40"
-        >
-          {showForm ? "Annuleren" : isEv ? "+ Laadsessie" : "+ Tankbeurt"}
-        </button>
+        <div className="flex gap-2">
+          {!isEv && (
+            <button
+              onClick={() => setFormMode((m) => (m === "fuel" ? null : "fuel"))}
+              disabled={current.sold_at != null}
+              className="bg-slate-900 text-white text-sm px-3 py-1.5 rounded hover:bg-slate-800 disabled:opacity-40"
+            >
+              {formMode === "fuel" ? "Annuleren" : "+ Tankbeurt"}
+            </button>
+          )}
+          {(isEv || isHybrid) && (
+            <button
+              onClick={() => setFormMode((m) => (m === "charge" ? null : "charge"))}
+              disabled={current.sold_at != null}
+              className="bg-sky-700 text-white text-sm px-3 py-1.5 rounded hover:bg-sky-800 disabled:opacity-40"
+            >
+              {formMode === "charge" ? "Annuleren" : "+ Laadsessie"}
+            </button>
+          )}
+        </div>
       </div>
 
-      {showForm && (
+      {formMode && (
         <EntryForm
           vehicleId={current.id}
-          isEv={!!isEv}
+          isEv={formMode === "charge"}
           lastOdo={lastOdo(entries)}
           onSaved={async () => {
-            setShowForm(false);
+            setFormMode(null);
             await refresh();
             await refreshVehicles();
           }}
@@ -98,8 +122,8 @@ export function Refuels() {
               <tr className="text-left text-xs text-slate-500 border-b border-slate-200">
                 <th className="px-4 py-2">Datum</th>
                 <th className="px-4 py-2">km-stand</th>
-                <th className="px-4 py-2">{isEv ? "kWh" : "Liters"}</th>
-                <th className="px-4 py-2">{isEv ? "Prijs/kWh" : "Prijs/l"}</th>
+                <th className="px-4 py-2">{isEv ? "kWh" : isHybrid ? "Liters/kWh" : "Liters"}</th>
+                <th className="px-4 py-2">{isEv ? "Prijs/kWh" : isHybrid ? "Prijs/l of /kWh" : "Prijs/l"}</th>
                 <th className="px-4 py-2">Totaal</th>
                 <th className="px-4 py-2">Verbruik</th>
                 <th className="px-4 py-2">Context</th>
