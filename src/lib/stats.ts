@@ -11,6 +11,8 @@ export interface ConsumptionPoint {
   odo: number;
   consumption: number | null; // l/100km of kWh/100km
   unit: "l" | "kWh";
+  volume: number; // liters of kWh in het interval
+  km: number; // km in het interval
 }
 
 export interface VehicleStats {
@@ -74,6 +76,8 @@ function consumptionFromTanks(
           odo: e.odo,
           consumption: (amountsSinceFull / km) * 100,
           unit,
+          volume: amountsSinceFull,
+          km,
         });
       }
     }
@@ -82,10 +86,12 @@ function consumptionFromTanks(
       amountsSinceFull = 0;
     }
   }
-  const total =
-    series.length > 0
-      ? series.reduce((s, p) => s + (p.consumption ?? 0), 0) / series.length
-      : null;
+  // Gewogen gemiddelde: totaal volume / totaal km. Een gemiddelde van de
+  // losse interval-verhoudingen wordt scheefgetrokken door intervallen met
+  // weinig volume op veel km (gemiste tankbeurten, terugbetalingen, etc.).
+  const totalVolume = series.reduce((s, p) => s + p.volume, 0);
+  const totalKm = series.reduce((s, p) => s + p.km, 0);
+  const total = totalKm > 0 && totalVolume > 0 ? (totalVolume / totalKm) * 100 : null;
   return { series, total };
 }
 
