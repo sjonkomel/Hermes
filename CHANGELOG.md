@@ -4,6 +4,18 @@ Alle opvallende wijzigingen aan dit project worden in dit bestand gedocumenteerd
 Indeling volgt [Keep a Changelog](https://keepachangelog.com/), versie volgt
 [SemVer](https://semver.org/).
 
+## [1.0.1] — 2026-11-16
+
+### Changed
+
+- Pompdisplay-verbeteringen: label-gebaseerde parsing (Bedrag € / Liters /
+  Prijs €), kruiscontrole liters x prijs = bedrag en afleiding van een
+  ontbrekende waarde. Otsu-binarisatie in de preprocessing leest backlit-
+  displays met reflectie (o.a. motorkilometerstand) beter. Knop heet nu
+  "pompdisplay scannen" i.p.v. "bon scannen".
+- Datumveld wordt nu overgenomen uit de foto (EXIF-datum, anders
+  bestandsdatum van de camera).
+
 ## [1.0.0] — 2026-11-16
 
 ### Added

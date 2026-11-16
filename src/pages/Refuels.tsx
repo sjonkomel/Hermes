@@ -333,22 +333,26 @@ function EntryForm({
   return (
     <form onSubmit={submit} className="bg-white rounded-lg shadow-sm p-4 space-y-3">
       <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-        <span className="text-xs text-slate-400">Foto invoeren (OCR op je toestel, foto wordt niet bewaard):</span>
+        <span className="text-xs text-slate-400">Foto's (OCR op je toestel, foto wordt niet bewaard; datum komt uit de foto):</span>
         <PhotoScan
           mode="odo"
           isEv={isEv}
           onResult={(r) => {
-            if ("odo" in r && r.odo) setOdo(r.odo);
+            if ("odo" in r) {
+              if (r.odo) setOdo(r.odo);
+              if (r.date) setDate(r.date);
+            }
           }}
         />
         <PhotoScan
-          mode="receipt"
+          mode="pump"
           isEv={isEv}
           onResult={(r) => {
             if ("amount" in r) {
               if (r.amount) setAmount(r.amount);
               if (r.total) setTotalCost(r.total);
               if (r.unitPrice) setUnitPrice(r.unitPrice);
+              if (r.date) setDate(r.date);
             }
           }}
         />
