@@ -4,6 +4,17 @@ Alle opvallende wijzigingen aan dit project worden in dit bestand gedocumenteerd
 Indeling volgt [Keep a Changelog](https://keepachangelog.com/), versie volgt
 [SemVer](https://semver.org/).
 
+## [0.2.1] — 2026-11-16
+
+### Added
+
+- Motormigratie: `scripts/migrate-motor.mjs` + `scripts/migration-motor.json`
+  (107 tankbeurten, juli 2023 t/m november 2026, €2.911,76, 4,46 l/100km).
+- Grafieken (verbruikshistorie + energiekosten/km) staan boven de tabel op
+  Tanken & laden.
+- Purge-stap met diagnose in het deploy-log (sha256-vingerafdruk key, zone,
+  HTTP-status); purge-fouten zijn niet-fataal (continue-on-error).
+
 ## [0.2.0] — 2026-11-16
 
 ### Added
