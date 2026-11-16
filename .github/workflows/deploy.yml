@@ -63,13 +63,23 @@ jobs:
           KEY: ${{ secrets.BUNNY_STORAGE_KEY }}
 
       - name: Purge CDN cache
-        continue-on-error: true  # nooit de deploy laten falen op purge; CDN-cache breekt anders de site
+        continue-on-error: true  # purge mag de deploy nooit fataal maken
         run: |
           set -euo pipefail
-          curl -fsS -o /dev/null -X POST "https://api.bunny.net/pullzone/${ID}/purgeCache" \
+          # vingerafdruk van de gebruikte key (geen leak): vergelijk lokaal met
+          # printf '%s' "JE_KEY" | sha256sum
+          echo "key-sha256: $(printf '%s' "${KEY}" | sha256sum | cut -d' ' -f1)"
+          echo "zone: ${ID}"
+          code=$(curl -sS -o /tmp/purge.out -w "%{http_code}" -X POST "https://api.bunny.net/pullzone/${ID}/purgeCache" \
             -H "AccessKey: ${KEY}" \
             -H "Content-Type: application/json" \
-            -d '{}'
+            -d '{}')
+          echo "purge HTTP-status: ${code}"
+          cat /tmp/purge.out || true
+          if [ "${code}" != "204" ] && [ "${code}" != "200" ]; then
+            echo "Purge mislukt (status ${code}) — niet fataal, maar purg dan handmatig in het Bunny-dashboard."
+            exit 1
+          fi
           echo "Cache purged."
         env:
           ID: ${{ secrets.BUNNY_PULLZONE_ID }}
