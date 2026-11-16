@@ -57,8 +57,11 @@ export function Layout({ vehicles }: { vehicles: Vehicle[] }) {
       <main className="mx-auto max-w-5xl px-4 py-6">
         <Outlet />
       </main>
-      <footer className="mx-auto max-w-5xl px-4 py-8 text-xs text-slate-400">
-        Ingelogd als {session?.user?.email}
+      <footer className="mx-auto max-w-5xl px-4 py-8 text-xs text-slate-400 flex justify-between flex-wrap gap-2">
+        <span>Ingelogd als {session?.user?.email}</span>
+        <span title="Versie uit package.json (nieuwe deploy = nieuwe versie na cache-purge)">
+          Hermes v{__APP_VERSION__}
+        </span>
       </footer>
     </div>
   );

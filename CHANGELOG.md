@@ -4,6 +4,12 @@ Alle opvallende wijzigingen aan dit project worden in dit bestand gedocumenteerd
 Indeling volgt [Keep a Changelog](https://keepachangelog.com/), versie volgt
 [SemVer](https://semver.org/).
 
+## [0.2.0] — 2026-11-16
+
+### Added
+
+- Versienummer in de footer (uit `package.json`, via `__APP_VERSION__`).
+
 ## [0.1.0] — 2026-11-16
 
 ### Added
